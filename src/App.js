@@ -1,11 +1,15 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <h1> Hello world! </h1>
-    </div>
-  );
-}
+import Header from './components/Header';
+import Main from './pages/main';
+
+import './style.css';
+
+const App = () => (
+  <div className="App">
+    <Header />
+    <Main />
+  </div>
+);
 
 export default App;
