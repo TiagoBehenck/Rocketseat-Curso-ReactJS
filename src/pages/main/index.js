@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../services/api'
 
-import './style.css';
+import './styles.css';
 
 export default class Main extends Component {
 
@@ -18,18 +18,19 @@ export default class Main extends Component {
     loadProducts = async () => {
         const response = await api.get("/pokemon");
 
-        this.setState({ pokemon: response.data.results });
+        this.setState({ pokemon : response.data.results });
+        console.log(this.state);
     }
 
     render() {
         const { pokemon } = this.state;
-
         return (
             <div className="pokemon-list">
                 {pokemon.map(pokemon => (
-                    <article key={pokemon._id}>
+                    <article>
                         <strong>{pokemon.name}</strong>
-                        <a href={pokemon.url}> Details </a>
+                        {/* <img href={pokemon}></img> */}
+                        <a href=""> Details </a>
                     </article>
                 ))}
             </div>
